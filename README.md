@@ -1,9 +1,9 @@
 # Standard Note-Bpm Level Defination
 A logarithm to analyze the chart from Bestdori.com which has upgraded 12 generations.
-The description of the logarithm will be written by LaTeX format.
-
+The description of the logarithm will be written by LaTeX format. Enjoy!
+If irregular context I reccomend transform it to LaTeX to present, such as matrices.
+(I have no idea about the irregularity anyway....)
 # Major Text
-Enjoy!
 
 This article, which contains a large component of advanced mathematics
 and algebra basis, is suitable for whom has an accountable foundation on
