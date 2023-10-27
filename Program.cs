@@ -3,7 +3,7 @@ using Core_Advanced_13_1;
 using MathNet.Numerics.LinearAlgebra;
 using OfficeOpenXml;
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-ExcelPackage package = new("F:/Bandori stats 3/Transformation and Regression.xlsx");
+ExcelPackage package = new("Transformation and Regression.xlsx");
 ExcelWorksheet Hit_Transform = package.Workbook.Worksheets["Hit Transform"];
 ExcelWorksheet Noe_Transform = package.Workbook.Worksheets["Note Transform"];
 ExcelWorksheet REG_Constants = package.Workbook.Worksheets["Regression"];
