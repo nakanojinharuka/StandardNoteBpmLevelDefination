@@ -39,7 +39,7 @@ Now that the brief process is presented, it is time for generating major functio
 ## Raw data handling
 
 Two websites represents two servers as well as two databases that there is no need to paste them in that the stream limits of the two sites are so low that if there are huge requests occurs, both sites must start up security system. Such demand on presenting raw data that wrote like: $"Distribution":0,2,6,9,4,8,3,1,5,4,4,6,2,4,6,2, "Distribution":0,3,7,12,5,9,3,1,7,6,2,5,9,4,10,3$. Every chart there must exist a 0 on the first element. To solve the 0, just alter it to 1. And the two matrices we proposed are like this:
-$$\begin{aligned}
+$\begin{aligned}
 RH=\begin{bmatrix}
 1 & 2 & 4 & 4\\
 6 & 9 & 3 & 6\\
@@ -52,10 +52,10 @@ SH=\begin{bmatrix}
  9 & 1 & 7 & 4\\
  2 & 9 & 10 & 3
 \end{bmatrix}\tag{aa}\end{aligned}
-$$
+$
 
 Equation <a href="#aa" data-reference-type="eqref" data-reference="aa">[aa]</a> respectively the real hit matrix and the screen hit matrix. But to make symmetric, we had better transform them as written below:
-$$\begin{aligned}
+$\begin{aligned}
 R=RHS=\begin{bmatrix}
  1 & 4 & 6 & 4\\
  4 & 9 & 2 & 4\\
@@ -67,12 +67,12 @@ S=SHS=\begin{bmatrix}
  5 & 12& 2 & 7\\
  7 & 2 & 7 & 7\\
  4 & 7 & 7 & 3
-\end{bmatrix}\tag{ab}\end{aligned}$$
+\end{bmatrix}\tag{ab}\end{aligned}$
 
 They are so magnificent that we can guarantee their eigenvalues are reals, indirectly resulting in their real singular values. How beautiful the matrices <a href="#ab" data-reference-type="eqref" data-reference="ab">[ab]</a> are!
 
 In fact, reality situation is this below. We believe it suffers because normal cases we can literally deal with utmost 4 dimensions’ matrix. To avoid the heavy massive process, MathNet Library shows its strengths. Matrix <a href="#ae" data-reference-type="eqref" data-reference="ae">[ae]</a> can be decomposed by its function calls "Decomposition.Svd()". There is no such idea to explain how singular value decomposition executes, so that we ought to consequently write the result of decomposition as <a href="#af" data-reference-type="eqref" data-reference="af">[af]</a>.
-$$\begin{aligned}
+$\begin{aligned}
 R&=\begin{bmatrix}
 9&8&8&2&2&5&7&6&5&3\\
 8&6&2&6&8&8&5&1&2&9\\
@@ -96,21 +96,21 @@ R&=\begin{bmatrix}
 &&&&&&&4.41&&\\
 &&&&&&&&2.38&\\
 &&&&&&&&&0.71
-\end{bmatrix}\end{aligned}$$
+\end{bmatrix}\end{aligned}$
 
 ## PCA: Analyzing and rebinding new variables
 
 Since eigenvalue decomposition provides orthogonal matrices <a href="#ag" data-reference-type="eqref" data-reference="ag">[ag]</a>, singular-value decomposition similar to this. Owing to <a href="#ac" data-reference-type="eqref" data-reference="ac">[ac]</a>, we can figure out <a href="#ad" data-reference-type="eqref" data-reference="ad">[ad]</a>, then we have <a href="#ah" data-reference-type="eqref" data-reference="ah">[ah]</a> and <a href="#ai" data-reference-type="eqref" data-reference="ai">[ai]</a> while *η* means singular value.
-$$\begin{aligned}
+$\begin{aligned}
 R&=P_{1}^{-1}\Lambda P_{1}=Q_{1}^{T}\Lambda Q_{1}\left(Q^{T}=Q^{-1}\right)\\
 V^{T}&=U\sim Q\\
 \left|\lambda_{A}\right|&=\eta_{A}\\
 R&=U_{1}\Theta V_{1}^{T}\\
 S&=U_{2}\Omega V_{2}^{T}\tag{ag,ac,ad,ah,ai}
-\end{aligned}$$
+\end{aligned}$
 
 We take 634 charts from official for reference and use SPSS on principal component analysis. For real hit there is a transformation matrix below, while also for screen hit transformation matrix below:
-$$\begin{aligned}
+$\begin{aligned}
 A&=\begin{bmatrix}
 0.573822412 & 0.403300461 & 0.21830206 & 0.363258335 & 0.314142651  \\
 0.495012493 & 0.526229742 & 0.366154776 & 0.197003012 & 0.317336326  \\
@@ -150,18 +150,18 @@ B&=\begin{bmatrix}
 0.805119101 & -0.518014943 & 0.156888708 & -0.001453936 & -0.076154375  \\
 0.672075884 & -0.480579175 & 0.332848271 & -0.133497811 & 0.237117348  \\
 0.559481947 & -0.494877337 & 0.374113306 & -0.175919479 & 0.408793939 
-\end{bmatrix}\end{aligned}$$
+\end{bmatrix}\end{aligned}$
 
 For calculation, we should use process below:
-$$\begin{aligned}
+$\begin{aligned}
 \eta _{he}=A^{T}\eta _{h}\\
 \eta _{se}=B^{T}\eta _{s}
-\end{aligned}$$
+\end{aligned}$
 
 ## Linear Regression to raw and precise adjustment
 
 To *η*<sub>*he*</sub> and *η*<sub>*se*</sub> there are consistently 5 parameters. Linear regression is the best way to find correlations, however, with different vectors so that presenting the result makes nonsense. We continue to progress. Greek letter *η* writes E as its upper case. The matrices *L* each of which is line vector. If that is not straight, we can transpose them as <a href="#aj" data-reference-type="eqref" data-reference="aj">[aj]</a> and <a href="#al" data-reference-type="eqref" data-reference="al">[al]</a> convey. Frankly, there is no such other clear way to express that with brief equations. We compared the two values they evaluate and suggested that we should make a pair of proportion indexes, called raw adjustment, for adapting figures. We finally use 0.3 and 0.7 to balance, as the equation <a href="#ak" data-reference-type="eqref" data-reference="ak">[ak]</a> says. Sample form is beneath the formulas.
-$$\begin{aligned}
+$\begin{aligned}
 k_{he}^{T}\eta _{he}&=l_{he}\\
 k_{se}^{T}\eta _{se}&=l_{se}\\
 k_{he}^{T}
@@ -184,9 +184,9 @@ l_{se1} & l_{se2} & l_{se3} & \cdots & l_{sen}
 k_{se}^{T}E\_{se}&=L\_{se}^{T}\\
 L_{he}&=E_{he}^{T}k_{he}\\
 L_{se}&=E_{se}^{T}k_{se}\\
-R&=0.3L_{he}+0.7L_{se}\tag{aj,ai,ak}\end{aligned}$$
+R&=0.3L_{he}+0.7L_{se}\tag{aj,ai,ak}\end{aligned}$
 <style>
-.center 
+.center
 {
   width: auto;
   display: table;
@@ -195,7 +195,6 @@ R&=0.3L_{he}+0.7L_{se}\tag{aj,ai,ak}\end{aligned}$$
 }
 </style>
 <div class="center">
-
 |   ID   |     Evaluation     | Original level |
 |:------:|:------------------:|:--------------:|
 | 117754 | 31.715530830491105 |       30       |
@@ -209,5 +208,4 @@ R&=0.3L_{he}+0.7L_{se}\tag{aj,ai,ak}\end{aligned}$$
 | 123246 | 27.168420242436664 |       27       |
 | 118955 | 26.93133457729617  |       27       |
 | 67943  | 25.38588328795224  |       26       |
-
 </div>
